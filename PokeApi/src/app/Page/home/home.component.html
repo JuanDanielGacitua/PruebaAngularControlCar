@@ -1,0 +1,75 @@
+    <div class="header-container">
+        <img src="pokemonLogosf.png" alt="Pokemon Logo" />
+        <div class="search-and-filter">
+            <mat-form-field appearance="fill" class="search-field">
+                <mat-label>Buscar Pokémon</mat-label>
+                <input matInput [(ngModel)]="searchQuery" (input)="filterPokemons()" placeholder="Buscar Pokémon">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="filter-field">
+                <mat-label>Filtrar por tipo</mat-label>
+                <mat-select [(ngModel)]="selectedType" (selectionChange)="filterPokemons()">
+                    <mat-option value="">Todos</mat-option>
+                    <mat-option *ngFor="let type of pokemonTypes" [value]="type.name">
+                        {{ type.name | titlecase }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="showCapturedPokemons = !showCapturedPokemons">
+                {{ showCapturedPokemons ? 'Ocultar Pokémon Capturados' : 'Mostrar Pokémon Capturados' }}
+            </button>
+        </div>
+    </div>
+
+
+    <mat-paginator [length]="filteredPokemons.length" [pageSize]="20"
+        (page)="applyPagination($event.pageIndex)"></mat-paginator>
+
+    <div class="captured-section">
+        <div *ngIf="showCapturedPokemons" class="captured-pokemons-section">
+            <div class="captured-title-container">
+                <h2 class="captured-title">Pokémon Capturados</h2>
+            </div>
+            <div class="pokemon-list">
+                <mat-card *ngFor="let pokemon of capturedPokemons" class="pokemon-card"
+                    [ngClass]="{'captured': isPokemonCaptured(pokemon)}">
+                    <img mat-card-image [src]="pokemon.image" alt="{{ pokemon.name }}" />
+                    <mat-card-content>
+                        <h3>{{ pokemon.name | titlecase }}</h3>
+                        <div class="pokemon-types">
+                            <mat-chip-list>
+                                <mat-chip *ngFor="let type of pokemon.types" class="captured">{{ type }}</mat-chip>
+                            </mat-chip-list>
+                        </div>
+                        <button mat-raised-button color="warn" (click)="releasePokemon(pokemon)">Liberar</button>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="pokemon-list-container">
+        <div class="pokemon-list">
+            <mat-card *ngFor="let pokemon of paginatedPokemons" class="pokemon-card">
+                <img mat-card-image [src]="pokemon.image" alt="{{pokemon.name}}" />
+                <mat-card-content>
+                    <h3>{{ pokemon.name | titlecase }} </h3>
+                    <p class="pokemon-id">N.º {{ pokemon.id | number:'2.0-3' }}</p>
+                    <div class="pokemon-types">
+                        <mat-chip-list>
+                            <mat-chip *ngFor="let type of pokemon.types" [ngClass]="'type-' + type.toLowerCase()">
+                                {{ type }}
+                            </mat-chip>
+                        </mat-chip-list>
+                    </div>
+                    <button mat-raised-button color="primary" (click)="capturePokemon(pokemon)">Capturar</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <img src="pokemonLogosf.png" alt="Pokemon Logo Footer" />
+        <p>Todos los derechos reservados - Pokémon © 2024</p>
+    </footer>
+
+

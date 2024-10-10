@@ -1,0 +1,33 @@
+<div class="login-container">
+    <div class="login-box card p-4 shadow" style="width: 100%; max-width: 400px">
+        <h2 class="text-center">BIENVENIDO</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+                <mat-form-field class="full-width">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput placeholder="Ingrese su usuario" formControlName="usuario" />
+                    <mat-error *ngIf="loginForm.get('usuario')?.invalid && loginForm.get('usuario')?.touched">
+                        Por favor ingrese un usuario válido.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group mb-3">
+                <mat-form-field class="full-width">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" placeholder="Ingrese su contraseña" formControlName="password" />
+                    <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                        La contraseña debe contener 7 dígitos.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <span class="link-style">Usuario: Pokemon </span><br>
+            <span class="link-style">Passwrod: 1234567</span><br><br>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid" class="w-100">
+                Ingresar
+            </button>
+        </form>
+    </div>
+</div>

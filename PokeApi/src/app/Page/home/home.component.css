@@ -1,0 +1,331 @@
+.header-container {
+    background: repeating-linear-gradient(45deg,
+                #5ba5fa 0px,
+                #4a9cfa 30px,
+                #4a9cfa 40px,
+                #2387f9 60px);
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-container h2 {
+    margin: 0 0 15px 0;
+}
+
+.search-and-filter {
+    background: repeating-linear-gradient(45deg,
+                #b5d0ef 0,
+                #a8cef9 30px,
+                #6baefa 10px,
+                #4a9eff 20px);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 10%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+button {
+    align-self: center;
+    margin-left: 10px;
+}
+
+.filter-field {
+    width: 250px;
+    margin-top: 20px;
+}
+
+.search-and-filter mat-form-field {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.mat-form-field-label {
+    margin-bottom: 5px;
+}
+
+.pokemon-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.pokemon-card {
+    width: 250px;
+    margin: 10px;
+    background: linear-gradient(to bottom, #bcd2ff, #fffefe);
+}
+
+.pokemon-card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body h5 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.captured-pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.captured-pokemon-card {
+    width: 200px;
+    text-align: center;
+}
+
+.captured-pokemon-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.captured {
+    background: linear-gradient(to bottom, #ffeb3b, #f9a825);
+    border: 1px solid #f57f17;
+}
+
+.captured .mat-chip {
+    background: linear-gradient(to bottom, #bbbbbb, #fffefe);
+    color: #000;
+}
+
+.captured .mat-card-content h3 {
+    color: #000;
+}
+
+.header-container h2,
+.captured-pokemons-section h2 {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 24px;
+    color: #ffcc00;
+    text-shadow: 2px 2px #3b4cca;
+    margin-bottom: 20px;
+}
+
+.captured-title-container {
+    background : linear-gradient(to bottom, #cdcdcd, #9b9999 );
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-color: #000;
+}
+
+.captured-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.captured-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+.pokemon-type {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-right: 4px;
+    display: inline-block;
+    color: #fff;
+}
+
+.pokemon-types {
+    margin-bottom: 8px;
+}
+
+.mat-chip {
+    margin: 2px;
+}
+
+.type-normal {
+    background-color: #A8A878 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-fighting {
+    background-color: #C03028 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-flying {
+    background-color: #A890F0 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-poison {
+    background-color: #A040A0 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-ground {
+    background-color: #E0C068 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-rock {
+    background-color: #B8A038 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-bug {
+    background-color: #A8B820 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-ghost {
+    background-color: #705898 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-steel {
+    background-color: #B8B8D0 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-fire {
+    background-color: #F08030 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-water {
+    background-color: #6890F0 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-grass {
+    background-color: #78C850 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-electric {
+    background-color: #F8D030 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-psychic {
+    background-color: #F85888 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-ice {
+    background-color: #98D8D8 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-dragon {
+    background-color: #7038F8 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-dark {
+    background-color: #705848 !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.type-fairy {
+    background-color: #EE99AC !important;
+    color: white;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin-right: 5px;
+}
+
+.footer-container {
+    background-color: #5ba5fa;
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 2px solid #3b4cca;
+}
+
+.footer-container img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Press Start 2P', sans-serif;
+}
